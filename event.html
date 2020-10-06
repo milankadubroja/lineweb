@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo" onclick=" sayHi();">   <h3>lineweb</h3> </div>
+    <div id="slogan">
+      <p> Lorem ipsum </p>
+    </div>
+  </div>
+  <!--end header-->
+  <div id="nav"> </div>
+  <!--end nav-->
+  <div id="main">
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p><a href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. Doloremque, reiciendis, totam, ratione omnis fugiat iste nihil ipsa aut eum magnam nostrum sequi. Dolorum, consequuntur pariatur placeat totam veritatis recusandae molestias.</p>
+    <p><img src="images/hero.jpg" alt="lineweb"></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, animi repellat iure non numquam consequuntur magni debitis blanditiis nisi minus!</p>
+  </div>
+  <!--end main-->
+
+  <div id="sidebar">
+    <div class="block">
+      <h2>Prvi</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sit eveniet error ullam illum culpa porro est natus dolor molestiae?</p>
+    </div>
+    <div class="block">
+      <h2>Drugi</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sit eveniet error ullam illum culpa porro est natus dolor molestiae?</p>
+    </div>
+    <div class="block">
+      <h2>Treći</h2>
+      <p><a href="#"><img src="images/location.png" alt="mapa"></a></p>
+      <p><a href="#">pogledajte detaljnije</a></p>
+    </div>
+  </div>
+  <!--end sidebar-->
+  <div id="footer">
+    <p>Copiright &copy; lineweb</p>
+  </div>
+  <!--end footer-->
+
+</div>
+<!--end wrapper-->
+<script>
+var item= document.getElementById('wrapper');
+console.log(item.children.length)
+/*var item= document.getElementById('slogan'); //varijabla item je hendler tj veza izmedju jS i html
+item.innerHTML="DOM";
+item.style.color='blue';
+var p = document.getElementsByTagName('p');
+
+for(var i=0; i<p.length;i++){
+console.log(p[i]);
+}*/
+//prvi nacin
+function sayHi(){
+alert ('hallo');
+}
+// drugi nacin
+var slogan = document.getElementById('slogan');
+slogan.onclick = function(){
+  //alert('ovo je nav');
+  slogan.style.color='blue';
+}
+//treci nacin
+var footer= document.getElementById('footer');
+footer.addEventListener('click',sayName);   //ne pozivamo iz koda funkciju vec joj odmah dodelju jemo sayNames
+function sayName(){
+  alert ('nesto drugo');
+}
+
+</script>
+</body>
+
+
+
+</html>
